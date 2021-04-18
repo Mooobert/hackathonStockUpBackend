@@ -1,0 +1,72 @@
+<html>
+
+<title>
+Account Creator
+</title>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./users.js"></script>
+</head>
+
+<body>
+    <script>
+        function Listener(e) {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var DOB = document.getElementById("DOB").value;
+            if(firstname != "" && lastname != "" && username != "" && password != "" && DOB != "")
+                document.getElementById("check").setAttribute('onClick', onclick = "location.href = './buffer.html'")
+                console.log(document.getElementById("username"));
+            if(firstname == "" || lastname == "" || username == "" || password == "" || DOB == "")
+                alert("Please enter any necessary remaining information");
+                return false;
+            
+                //document.getElementById("check").setAttribute('onClick', "javascript: redirect();" );
+            //else
+            //eventListener("list", user_name, password)
+        };
+    
+            //var accountName = document.getElementById('Username').value;
+            //accountName.innerHTML += `${accountName}`
+            //alert(`User logging in is ${accountName}`);
+            //<button onclick = "eventListener()" type = "submit" id = "check">submit</button>
+    </script>
+    <p>Here you can make a new account!</p>
+    <form onSubmit = "return Listener()">
+        <p>Enter first name:</p>
+        <input type = "text" id = "firstname", value = ""/>
+        <br>
+        <br>
+        <p>Enter last name:</p>
+        <input type = "text" id = "lastname" value = ""/>
+        <br>
+        <br>
+        <p>Create a username:</p>
+        <input type = "text" id = "username" value = "" class = "inputUser"/> 
+        <br>
+        <br>
+        <p>Create your password:</p>
+        <input type = "password" id = "password" value = ""/>
+        <br>
+        <br>
+        <p>Enter DOB:</p>
+        <input type = "text" id = "DOB" placeholder = "MM/DD/YYYY"/>
+        <br>
+        <br>
+        <button type = "submit" id = "check" value = "submit" class = "myButton">submit</button>
+    </form>
+    <script type = "text/javascript">
+        $(document).ready(function() {
+            $(".myButton").on("click", function() {
+                var value = $(".inputUser").val();
+                printusers(value);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
